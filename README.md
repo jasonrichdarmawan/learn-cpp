@@ -16,3 +16,7 @@ g++ -std=c++11 main.cpp fibonacciMemoization.cpp -o main && ./main
         auto object1 = FibonacciMemoization::getInstance();
         FibonacciMemoization object2 = *object1;
         ```
+    - [x] prevent copying with
+        ```
+        auto object1 = *FibonacciMemoization::getInstance();
+        ```

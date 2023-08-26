@@ -23,7 +23,7 @@ void fibonacciMemoizationExample() {
     FibonacciMemoization object;
     const auto fb = object.calculate(42);
 
-// example B pf the unexpected usage.
+// example B of the unexpected usage.
 // auto object = new FibonacciMemoization();
 // const auto fb = object->calculate(42);
     
@@ -38,6 +38,7 @@ void fibonacciMemoizationExample() {
     std::cout << "f(42) = " << fb << '\n' << "elapsed time: ";
     std::cout << elapsed_seconds.count() << "s\n\n";
 
+// example B of the unexpected usage.
 // need to explicitly call destructor after use due to use of the `new` keyword.
-// object->~FibonacciMemoization();
+// delete object;
 }

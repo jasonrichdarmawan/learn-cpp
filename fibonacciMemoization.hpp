@@ -1,4 +1,5 @@
 // https://en.cppreference.com/w/cpp/memory/weak_ptr
+// https://refactoring.guru/design-patterns/singleton/cpp/example#example-1
 
 #ifndef FIBONACCI_MEMOIZATION_HPP
 #define FIBONACCI_MEMOIZATION_HPP
