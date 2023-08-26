@@ -19,7 +19,7 @@ std::shared_ptr<FibonacciMemoization> FibonacciMemoization::getInstance() {
 
     std::lock_guard<std::mutex> lock(mutex);
     if (instance.expired()) {
-        sp = std::make_shared<FibonacciMemoization>();
+        sp = std::shared_ptr<FibonacciMemoization>(new FibonacciMemoization);
         instance = sp;
     }
 
