@@ -9,7 +9,7 @@
 
 class FibonacciMemoization {
 public:
-    static std::shared_ptr<FibonacciMemoization> getInstance();
+    static std::shared_ptr<FibonacciMemoization> getInstance(int id);
 
     /**
      * Singleton should not be cloneable.
@@ -27,7 +27,7 @@ private:
     static std::weak_ptr<FibonacciMemoization> instance;
     static std::mutex mutex;
 
-    FibonacciMemoization();
+    FibonacciMemoization(int id);
 
     int id;
     std::unordered_map<unsigned, unsigned> cache;

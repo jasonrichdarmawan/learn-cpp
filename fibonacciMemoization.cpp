@@ -1,9 +1,7 @@
 #include "fibonacciMemoization.hpp"
 #include <iostream>
 
-FibonacciMemoization::FibonacciMemoization() {
-    srand(time(0));
-    id = rand();
+FibonacciMemoization::FibonacciMemoization(int id) : id(id) {
     std::cout << typeid(*this).name() << " " << __func__ << " " << id << "\n\n";
 }
 
@@ -14,12 +12,12 @@ FibonacciMemoization::~FibonacciMemoization() {
 std::weak_ptr<FibonacciMemoization> FibonacciMemoization::instance;
 std::mutex FibonacciMemoization::mutex;
 
-std::shared_ptr<FibonacciMemoization> FibonacciMemoization::getInstance() {
+std::shared_ptr<FibonacciMemoization> FibonacciMemoization::getInstance(int id) {
     std::shared_ptr<FibonacciMemoization> sp;
 
     std::lock_guard<std::mutex> lock(mutex);
     if (instance.expired()) {
-        sp = std::shared_ptr<FibonacciMemoization>(new FibonacciMemoization);
+        sp = std::shared_ptr<FibonacciMemoization>(new FibonacciMemoization(id));
         instance = sp;
     }
 

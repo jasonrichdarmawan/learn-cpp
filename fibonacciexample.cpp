@@ -22,11 +22,14 @@ void fibonacciExample() {
 void fibonacciMemoizationExample() {
     const auto start = std::chrono::steady_clock::now();
 
+    srand(time(0));
+    int id = rand();
+
 // Singleton should not be cloneable.
-// auto object = *FibonacciMemoization::getInstance();
+// auto object = *FibonacciMemoization::getInstance(id);
 // const auto fb = object.calculate(42);
     
-    auto object = FibonacciMemoization::getInstance();
+    auto object = FibonacciMemoization::getInstance(id);
     const auto fb = object->calculate(42);
 
     const auto end = std::chrono::steady_clock::now();
